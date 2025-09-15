@@ -68,6 +68,8 @@ re2 = rectangle(310, 210, "solid", "white")
 
 base = overlay-align("center", "middle", re1, re2)
 
-sha = regular-polygon(50, 10, "solid", "black")
+sha = regular-polygon(50, 19, "solid", "black")
 
 overlay-align("center", "middle", sha, base)
+
+#This is my shape with a white border, a purple flag base, and a regular polygon in the middle. 

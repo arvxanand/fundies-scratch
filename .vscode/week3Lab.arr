@@ -80,29 +80,3 @@ check:
 end
 
 
-#Problem 5:
-something = load-table:
-  date :: String,
-  rate :: Number
-  source: csv-table-file("boe_rates.csv", default-options)
-  sanitize rate using num-sanitizer
-  sanitize date using string-sanitizer
-end
-
-
-num_rows = something.length()
-median_rate = median(something, "rate")
-
-mode_rate = modes(something, "rate")
-
-ordered_asc = order something: rate ascending end
-ordered_desc = order something: rate descending end
-
-min_rate = ordered_asc.row-n(0)["rate"]
-max_rate = ordered_desc.row-n(0)["rate"]
-
-check:
-  num_rows > 0
-  median_rate is median(something, "rate")
-  min_rate <= max_rate
-end

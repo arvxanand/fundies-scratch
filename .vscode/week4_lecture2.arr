@@ -48,7 +48,7 @@ fun apply-discounts(t :: Table) -> Table:
   transform-column(t, "price", lam(price :: Number): 
     if price < 100: price * 0.8 else: price end
   end)
-where:
+where:`
   test-table =
     table: price
       row: 50
